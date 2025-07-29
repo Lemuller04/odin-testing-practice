@@ -8,9 +8,29 @@ const Main = (() => {
     return typeof str === "string" ? [...str].reverse().join("") : str;
   }
 
+  const calculator = {
+    sum: (a, b) => {
+      if (typeof a !== "number" || typeof b !== "number") return NaN;
+      return a + b;
+    },
+    sub: (a, b) => {
+      if (typeof a !== "number" || typeof b !== "number") return NaN;
+      return a - b;
+    },
+    divide: (a, b) => {
+      if (typeof a !== "number" || typeof b !== "number" || b === 0) return NaN;
+      return a / b;
+    },
+    multiply: (a, b) => {
+      if (typeof a !== "number" || typeof b !== "number") return NaN;
+      return a * b;
+    },
+  };
+
   return {
     capitalize,
     reverseString,
+    calculator,
   };
 })();
 
