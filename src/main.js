@@ -4,8 +4,13 @@ const Main = (() => {
     return str.charAt(0).toUpperCase().concat(str.slice(1));
   }
 
+  function reverseString(str) {
+    return typeof str === "string" ? [...str].reverse().join("") : str;
+  }
+
   return {
     capitalize,
+    reverseString,
   };
 })();
 
