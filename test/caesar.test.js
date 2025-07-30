@@ -22,4 +22,12 @@ describe("caesarCipher function", () => {
   it("Handles keys greater than 26", () => {
     expect(Main.caesarCipher("xyza", 27)).toBe("yzab");
   });
+
+  it("Return the same string if key is zero", () => {
+    expect(Main.caesarCipher("Hello!", 0)).toBe("Hello!");
+  });
+
+  it("Cyphers with negative keys", () => {
+    expect(Main.caesarCipher("Def!", -3)).toBe("Abc!");
+  });
 });
