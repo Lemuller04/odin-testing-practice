@@ -27,10 +27,13 @@ const Main = (() => {
     },
   };
 
+  function caesarCipher(str, key) {}
+
   return {
     capitalize,
     reverseString,
     calculator,
+    caesarCipher,
   };
 })();
 
