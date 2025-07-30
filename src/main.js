@@ -61,11 +61,29 @@ const Main = (() => {
     return res;
   }
 
+  function analyzeArray(arr) {
+    let obj = { average: arr[0], min: arr[0], max: arr[0], length: 0 };
+    let sum = 0;
+
+    for (let num of arr) {
+      if (num < obj.min) obj.min = num;
+      if (num > obj.max) obj.max = num;
+      sum += num;
+
+      obj.length++;
+    }
+
+    obj.average = sum / obj.length;
+
+    return obj;
+  }
+
   return {
     capitalize,
     reverseString,
     calculator,
     caesarCipher,
+    analyzeArray,
   };
 })();
 
