@@ -27,7 +27,16 @@ const Main = (() => {
     },
   };
 
-  function caesarCipher(str, key) {}
+  function caesarCipher(str, key) {
+    let res = "";
+
+    for (let i = 0; i < str.length; i++) {
+      let char = str.charCodeAt(i);
+      res += String.fromCharCode(char + key);
+    }
+
+    return res;
+  }
 
   return {
     capitalize,
