@@ -18,4 +18,8 @@ describe("caesarCipher function", () => {
     expect(Main.caesarCipher("XYZ", 3)).toBe("ABC");
     expect(Main.caesarCipher("!xYz?", 3)).toBe("!aBc?");
   });
+
+  it("Handles keys greater than 26", () => {
+    expect(Main.caesarCipher("xyza", 27)).toBe("yzab");
+  });
 });
