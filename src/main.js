@@ -30,6 +30,8 @@ const Main = (() => {
   function caesarCipher(str, key) {
     let res = "";
 
+    key = ((key % 26) + 26) % 26;
+
     for (let i = 0; i < str.length; i++) {
       let char = str.charCodeAt(i);
       let keyCopy = key;
