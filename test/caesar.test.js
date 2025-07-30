@@ -15,5 +15,7 @@ describe("caesarCipher function", () => {
 
   it("Loops over the alphabet", () => {
     expect(Main.caesarCipher("xyz", 3)).toBe("abc");
+    expect(Main.caesarCipher("XYZ", 3)).toBe("ABC");
+    expect(Main.caesarCipher("!xYz?", 3)).toBe("!aBc?");
   });
 });

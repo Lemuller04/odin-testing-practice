@@ -32,7 +32,24 @@ const Main = (() => {
 
     for (let i = 0; i < str.length; i++) {
       let char = str.charCodeAt(i);
-      res += isAlphabetical(char) ? String.fromCharCode(char + key) : str[i];
+      let keyCopy = key;
+
+      if (isAlphabetical(char)) {
+        if (loopsAlphabet(char, key)) {
+          let max = char <= 90 ? 90 : 122;
+          let diff = max - char;
+          keyCopy -= diff;
+          char = max - 26;
+        }
+
+        res += String.fromCharCode(char + keyCopy);
+      } else {
+        res += str[i];
+      }
+    }
+
+    function loopsAlphabet(code, key) {
+      return code <= 90 ? code + key > 90 : code + key > 122;
     }
 
     function isAlphabetical(code) {
