@@ -8,4 +8,12 @@ describe("caesarCipher function", () => {
   it("Ignores non alphabetical characters", () => {
     expect(Main.caesarCipher("!abc?", 5)).toBe("!fgh?");
   });
+
+  it("Maintains string original case", () => {
+    expect(Main.caesarCipher("AbC", 5)).toBe("FgH");
+  });
+
+  it("Loops over the alphabet", () => {
+    expect(Main.caesarCipher("xyz", 3)).toBe("abc");
+  });
 });
