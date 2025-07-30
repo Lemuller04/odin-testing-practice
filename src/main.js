@@ -32,7 +32,11 @@ const Main = (() => {
 
     for (let i = 0; i < str.length; i++) {
       let char = str.charCodeAt(i);
-      res += String.fromCharCode(char + key);
+      res += isAlphabetical(char) ? String.fromCharCode(char + key) : str[i];
+    }
+
+    function isAlphabetical(code) {
+      return (code >= 97 && code <= 122) || (code >= 65 && code <= 90);
     }
 
     return res;
